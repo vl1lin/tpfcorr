@@ -1,6 +1,6 @@
 """Тесты `models/mukherjee_brill.py` — корреляция Mukherjee–Brill (ICorrelation).
 
-Ожидаемый API (`from correlations.models.mukherjee_brill import ...`):
+Ожидаемый API (`from tpfcorr.models.mukherjee_brill import ...`):
     MukherjeeBrillOptions(include_acceleration=True, stratified_combined_momentum=False,
                           wall_shear_as_published=False, annular_fr_log_interp=False)
     MukherjeeBrill(options=None, flow_model=None); .name == "mukherjee_brill"; .options; .flow_model;
@@ -22,11 +22,11 @@ from typing import Any
 
 import pytest
 
-from correlations.core import dimensionless, friction, mixture, stratified
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
-from correlations.models.mukherjee_brill import (
+from tpfcorr.core import dimensionless, friction, mixture, stratified
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
+from tpfcorr.models.mukherjee_brill import (
     MukherjeeBrill,
     MukherjeeBrillOptions,
     annular_friction_ratio,

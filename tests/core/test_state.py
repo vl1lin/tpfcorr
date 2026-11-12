@@ -1,6 +1,6 @@
 """Тесты `core/state.py::FlowState` — валидация входа (pydantic), ТЗ «Вход FlowState».
 
-Ожидаемый API: `from correlations.core.state import FlowState`.
+Ожидаемый API: `from tpfcorr.core.state import FlowState`.
 Любое нарушение условий -> `pydantic.ValidationError`.
 """
 
@@ -10,7 +10,7 @@ from typing import Any
 import pytest
 from pydantic import ValidationError
 
-from correlations.core.state import FlowState
+from tpfcorr.core.state import FlowState
 
 
 def make(base: dict[str, Any], **changes: Any) -> FlowState:

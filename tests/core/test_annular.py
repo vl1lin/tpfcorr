@@ -1,6 +1,6 @@
 """Тесты `core/annular.py` — кольцевой режим (пересечения №11–№13 ТЗ).
 
-Ожидаемый API (`from correlations.core import annular`):
+Ожидаемый API (`from tpfcorr.core import annular`):
     critical_velocity(v_sg, mu_g, sigma, rho_g, rho_l) -> float
         v_crit = 1e4·v_sg·μ_g/σ·√(ρ_g/ρ_L)  (Ansari (72), HK (34); безразмерная, уже ×1e4)
     entrainment_wallis(v_crit) -> float          F_E = max(0, 1 − exp[−0.125(v_crit − 1.5)])  Ansari (71)
@@ -24,7 +24,7 @@ from typing import Any
 
 import pytest
 
-from correlations.core import annular, friction, gradient, mixture
+from tpfcorr.core import annular, friction, gradient, mixture
 
 # reference: ТЗ, «Элементные эталоны», Ansari R2: F_E / λ_LC / ρ_C; X_M² / Y_M / δ (96)
 R2_F_E = 0.5475

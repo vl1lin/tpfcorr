@@ -38,13 +38,13 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import annular, bubbles, friction, gradient, mixture, stratified, transitions
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import ConvergenceError
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core import annular, bubbles, friction, gradient, mixture, stratified, transitions
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import ConvergenceError
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # Предел плотной упаковки пузырьков: [8], максимум α_ns в дисперсно-пузырьковом режиме и в пробке
 _MAX_PACKING_ALPHA: Final = 0.52

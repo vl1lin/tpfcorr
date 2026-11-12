@@ -22,13 +22,13 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import bubbles, transitions
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import OutOfRangeWarning
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core import bubbles, transitions
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import OutOfRangeWarning
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # 1 lbm/(ft·s²) = 1.488 кг/(м·с²) (HK, ур. 8–9 даны в промысловых единицах)
 LBM_FT_S2_IN_SI: Final = 1.488

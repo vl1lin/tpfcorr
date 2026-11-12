@@ -1,6 +1,6 @@
 """Тесты `flow_models/barnea.py` — унифицированная модель режимов Barnea (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.barnea import BarneaModel, BarneaOptions`):
+Ожидаемый API (`from tpfcorr.flow_models.barnea import BarneaModel, BarneaOptions`):
     BarneaOptions(fm_noslip_reynolds=False, elongated_bubble_horizontal_only=True,
                   use_moody_friction=True, split_churn=True, friction_ratio_as_published=True)
     published_friction_ratio(d_tilde_l, u_tilde_l, re_l) -> float   # (D̃_L·Ũ_L)^-n, n = 0.2 / 1
@@ -31,10 +31,10 @@ from typing import Any
 
 import pytest
 
-from correlations.core import friction, gradient, stratified, transitions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.barnea import BarneaModel, BarneaOptions, published_friction_ratio
+from tpfcorr.core import friction, gradient, stratified, transitions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.barnea import BarneaModel, BarneaOptions, published_friction_ratio
 
 REFERENCE = Path(__file__).resolve().parents[1] / "reference" / "barnea_maps.json"
 

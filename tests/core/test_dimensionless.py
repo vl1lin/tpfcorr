@@ -1,19 +1,19 @@
 """Тесты `core/dimensionless.py` — безразмерные числа (пересечение №1 ТЗ).
 
-Ожидаемый API (`from correlations.core import dimensionless`):
+Ожидаемый API (`from tpfcorr.core import dimensionless`):
     froude_number(v_m_m_s, d_m) -> float                    N_FR = v_m²/(g·d)
     duns_ros(v_sl, v_sg, rho_l, sigma, mu_l) -> DunsRosNumbers   (n_lv, n_gv, n_l)
     diameter_number(d_m, rho_l, sigma) -> float             N_d = d·√(ρ_L·g/σ)
     reynolds_number(rho, v_m_s, d_m, mu) -> float           Re = ρ·v·d/μ
-`from correlations.core.constants import GRAVITY_M_S2`  (= 9.81 м/с²).
+`from tpfcorr.core.constants import GRAVITY_M_S2`  (= 9.81 м/с²).
 """
 
 from typing import Any
 
 import pytest
 
-from correlations.core import dimensionless
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core import dimensionless
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 
 def test_gravity_constant() -> None:

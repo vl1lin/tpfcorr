@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from correlations.core.state import FlowState
+from tpfcorr.core.state import FlowState
 
 BAR_TO_PA = 1.0e5
 

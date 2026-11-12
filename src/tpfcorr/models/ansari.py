@@ -39,19 +39,19 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import bubbles, dimensionless, friction, gradient, mixture, solvers
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import ConvergenceError, UnsupportedPatternError
-from correlations.core.interfaces import IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowState
-from correlations.flow_models.ansari_fp import (
+from tpfcorr.core import bubbles, dimensionless, friction, gradient, mixture, solvers
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import ConvergenceError, UnsupportedPatternError
+from tpfcorr.core.interfaces import IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowState
+from tpfcorr.flow_models.ansari_fp import (
     AnsariFlowModel,
     AnsariFlowOptions,
     solve_annular_film,
 )
-from correlations.models._common import assemble_gradient, single_phase_correlation_result
+from tpfcorr.models._common import assemble_gradient, single_phase_correlation_result
 
 # Профиль скорости смеси (34), (35), (20): центральная скорость = 1.2·v_m
 _CENTERLINE_FACTOR: Final = 1.2

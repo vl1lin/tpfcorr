@@ -15,7 +15,7 @@ import math
 from dataclasses import dataclass
 from typing import Final
 
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 # Критическое газосодержание перехода пузырьковый -> пробковый (Taitel 1980; HK; Ansari)
 BUBBLE_SLUG_ALPHA: Final = 0.25

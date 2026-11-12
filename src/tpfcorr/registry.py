@@ -13,21 +13,21 @@
 from collections.abc import Callable
 from typing import Any, TypeVar
 
-from correlations.core.interfaces import ICorrelation, IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.flow_models.ansari_fp import AnsariFlowModel, AnsariFlowOptions
-from correlations.flow_models.barnea import BarneaModel, BarneaOptions
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap, BeggsBrillMapOptions
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
-from correlations.flow_models.mukherjee_brill_fp import (
+from tpfcorr.core.interfaces import ICorrelation, IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel, AnsariFlowOptions
+from tpfcorr.flow_models.barnea import BarneaModel, BarneaOptions
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap, BeggsBrillMapOptions
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
+from tpfcorr.flow_models.mukherjee_brill_fp import (
     MukherjeeBrillFlowModel,
     MukherjeeBrillFlowOptions,
 )
-from correlations.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
-from correlations.models.ansari import Ansari, AnsariOptions
-from correlations.models.beggs_brill import BeggsBrill, BeggsBrillOptions
-from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions
-from correlations.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
+from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
+from tpfcorr.models.ansari import Ansari, AnsariOptions
+from tpfcorr.models.beggs_brill import BeggsBrill, BeggsBrillOptions
+from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions
+from tpfcorr.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
 
 _T = TypeVar("_T")
 _CorrelationFactory = Callable[[Any, IFlowModel | None], ICorrelation]

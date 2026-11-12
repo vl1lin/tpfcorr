@@ -1,6 +1,6 @@
-"""Тесты реестра `correlations.registry` (этап 6, ТЗ «Реестр и публичный API»).
+"""Тесты реестра `tpfcorr.registry` (этап 6, ТЗ «Реестр и публичный API»).
 
-Ожидаемый API (модуль `correlations.registry`):
+Ожидаемый API (модуль `tpfcorr.registry`):
     list_correlations() -> tuple[str, ...]      — имена корреляций, отсортированы;
     list_flow_models() -> tuple[str, ...]       — имена моделей режима, отсортированы;
     get_correlation(name, *, flow_model=None, **flags) -> ICorrelation
@@ -20,19 +20,19 @@ from typing import Any
 import pytest
 from pydantic import ValidationError
 
-from correlations.core.interfaces import ICorrelation, IFlowModel
-from correlations.core.state import CorrelationResult, FlowPatternResult, FlowState
-from correlations.flow_models.ansari_fp import AnsariFlowModel
-from correlations.flow_models.barnea import BarneaModel
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel
-from correlations.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
-from correlations.flow_models.taitel_dukler import TaitelDuklerModel
-from correlations.models.ansari import Ansari, AnsariOptions
-from correlations.models.beggs_brill import BeggsBrill, BeggsBrillOptions
-from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions
-from correlations.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
-from correlations.registry import (
+from tpfcorr.core.interfaces import ICorrelation, IFlowModel
+from tpfcorr.core.state import CorrelationResult, FlowPatternResult, FlowState
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel
+from tpfcorr.flow_models.barnea import BarneaModel
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel
+from tpfcorr.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
+from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel
+from tpfcorr.models.ansari import Ansari, AnsariOptions
+from tpfcorr.models.beggs_brill import BeggsBrill, BeggsBrillOptions
+from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions
+from tpfcorr.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
+from tpfcorr.registry import (
     describe_correlation,
     describe_flow_model,
     get_correlation,

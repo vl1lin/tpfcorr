@@ -5,7 +5,7 @@
 
 from _fluids import AIR_WATER, make_state, setup_console
 
-from correlations import get_correlation
+from tpfcorr import get_correlation
 
 
 def main() -> None:

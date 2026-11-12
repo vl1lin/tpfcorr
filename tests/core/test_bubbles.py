@@ -1,6 +1,6 @@
 """Тесты `core/bubbles.py` — скорости всплытия (пересечения №4, №5 ТЗ).
 
-Ожидаемый API (`from correlations.core import bubbles`):
+Ожидаемый API (`from tpfcorr.core import bubbles`):
     harmathy_rise_velocity(rho_l, rho_g, sigma, *, coef=1.53) -> float
         v∞ = coef·[g·σ·Δρ/ρ_L²]^0.25  (Harmathy 1960; HK 1988 ур. 3; Barnea [3]; Ansari (3))
     taylor_rise_velocity(d_m, rho_l, rho_g, *, coef) -> float
@@ -15,7 +15,7 @@ from typing import Any
 
 import pytest
 
-from correlations.core import bubbles
+from tpfcorr.core import bubbles
 
 
 def test_harmathy_r2_matches_tz(r2_kwargs: dict[str, Any]) -> None:

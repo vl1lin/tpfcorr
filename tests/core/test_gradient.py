@@ -1,6 +1,6 @@
 """Тесты `core/gradient.py` — сборка градиента давления (ТЗ «Дополнительно общие»).
 
-Ожидаемый API (`from correlations.core import gradient`):
+Ожидаемый API (`from tpfcorr.core import gradient`):
     friction_gradient(f_darcy, rho, v, d_m) -> float      f_D·ρ·v²/(2d), Па/м (положительный)
     gravity_gradient(rho, theta_rad) -> float             ρ·g·sinθ, Па/м
     kinetic_number(rho, v_m, v_g, p_pa) -> float          Ek = ρ·v_m·v_g/p   (BB ур. 1; HK (33): ρ_c·v_g²/p)
@@ -15,9 +15,9 @@ from typing import Any
 
 import pytest
 
-from correlations.core import friction, gradient
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import ConvergenceError
+from tpfcorr.core import friction, gradient
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import ConvergenceError
 
 
 def test_friction_gradient_definition() -> None:

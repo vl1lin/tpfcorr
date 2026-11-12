@@ -5,7 +5,7 @@
 
 from _fluids import OIL_GAS, make_state, setup_console
 
-from correlations import UnsupportedPatternError, get_correlation, get_flow_model, list_flow_models
+from tpfcorr import UnsupportedPatternError, get_correlation, get_flow_model, list_flow_models
 
 
 def main() -> None:

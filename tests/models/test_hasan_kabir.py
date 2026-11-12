@@ -1,6 +1,6 @@
 """Тесты `models/hasan_kabir.py` — корреляция Hasan–Kabir 1988 (ICorrelation).
 
-Ожидаемый API (`from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions`):
+Ожидаемый API (`from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions`):
     HasanKabirOptions(porteous_low_pressure=False, wallis_c2=False, rise_coef_150=False,
                       churn_as_slug=False, include_acceleration=True, warn_non_vertical=True)
     HasanKabir(options=None, flow_model=None); .name == "hasan_kabir"; .options; .flow_model; .calc(state)
@@ -36,13 +36,13 @@ from typing import Any, ClassVar
 
 import pytest
 
-from correlations.core import annular, bubbles, friction, mixture
-from correlations.core.errors import OutOfRangeWarning, UnsupportedPatternError
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel
-from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions
+from tpfcorr.core import annular, bubbles, friction, mixture
+from tpfcorr.core.errors import OutOfRangeWarning, UnsupportedPatternError
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel
+from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions
 
 D = 0.0508
 G = 9.81

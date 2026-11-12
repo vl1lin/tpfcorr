@@ -1,6 +1,6 @@
 """Тесты `core/interfaces.py` и общего поведения всех модулей режима (IFlowModel).
 
-Ожидаемый API: `from correlations.core.interfaces import IFlowModel` — `Protocol`, `runtime_checkable`:
+Ожидаемый API: `from tpfcorr.core.interfaces import IFlowModel` — `Protocol`, `runtime_checkable`:
     name: ClassVar[str]
     options -> BaseOptions (property)
     predict(state: FlowState) -> FlowPatternResult
@@ -12,16 +12,16 @@ from collections.abc import Callable
 import pytest
 from pydantic import ValidationError
 
-from correlations.core.interfaces import IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models.ansari_fp import AnsariFlowModel
-from correlations.flow_models.barnea import BarneaModel
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel
-from correlations.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
-from correlations.flow_models.taitel_dukler import TaitelDuklerModel
+from tpfcorr.core.interfaces import IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel
+from tpfcorr.flow_models.barnea import BarneaModel
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel
+from tpfcorr.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
+from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel
 
 MODEL_CLASSES = [
     BeggsBrillMap,

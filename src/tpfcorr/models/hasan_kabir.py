@@ -34,14 +34,14 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import annular, bubbles, dimensionless, friction, gradient, mixture
-from correlations.core.errors import OutOfRangeWarning, UnsupportedPatternError
-from correlations.core.interfaces import IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowState
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
-from correlations.models._common import assemble_gradient, single_phase_correlation_result
+from tpfcorr.core import annular, bubbles, dimensionless, friction, gradient, mixture
+from tpfcorr.core.errors import OutOfRangeWarning, UnsupportedPatternError
+from tpfcorr.core.interfaces import IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowState
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
+from tpfcorr.models._common import assemble_gradient, single_phase_correlation_result
 
 # Коэффициенты (ур. 3, 17, 19, 27, 29, 30, Приложение)
 _RISE_COEFFICIENT_150: Final = 1.50

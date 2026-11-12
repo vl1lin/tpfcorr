@@ -1,6 +1,6 @@
 """Тесты `core/mixture.py` — свойства смеси (пересечение №2 ТЗ).
 
-Ожидаемый API (`from correlations.core import mixture`):
+Ожидаемый API (`from tpfcorr.core import mixture`):
     no_slip(v_sl, v_sg, rho_l, rho_g, mu_l, mu_g) -> NoSlipMixture
         поля: lam, rho_ns_kg_m3, mu_ns_pa_s, v_m_m_s     (λ_L = v_sl/v_m; линейное смешение)
     slip(holdup, rho_l, rho_g, mu_l, mu_g) -> SlipMixture
@@ -11,7 +11,7 @@ from typing import Any
 
 import pytest
 
-from correlations.core import dimensionless, mixture
+from tpfcorr.core import dimensionless, mixture
 
 
 def no_slip_r1(r1: dict[str, Any]) -> mixture.NoSlipMixture:

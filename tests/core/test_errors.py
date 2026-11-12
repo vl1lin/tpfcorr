@@ -4,7 +4,7 @@ import warnings
 
 import pytest
 
-from correlations.core.errors import ConvergenceError, OutOfRangeWarning
+from tpfcorr.core.errors import ConvergenceError, OutOfRangeWarning
 
 
 def test_convergence_error_carries_params() -> None:
@@ -58,8 +58,8 @@ def test_out_of_range_warning_with_context_can_be_emitted() -> None:
 
 
 def test_unsupported_pattern_error_carries_pattern() -> None:
-    from correlations.core.errors import UnsupportedPatternError
-    from correlations.core.patterns import FlowPattern
+    from tpfcorr.core.errors import UnsupportedPatternError
+    from tpfcorr.core.patterns import FlowPattern
 
     err = UnsupportedPatternError(FlowPattern.CHURN, "beggs_brill")
     assert isinstance(err, ValueError)

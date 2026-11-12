@@ -14,7 +14,7 @@ import sys
 from collections.abc import Callable, Iterator
 from typing import Final
 
-from correlations.core.errors import ConvergenceError
+from tpfcorr.core.errors import ConvergenceError
 
 _DEFAULT_RTOL: Final = 1e-12
 _DEFAULT_ATOL: Final = 1e-14

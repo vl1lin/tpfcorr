@@ -5,7 +5,7 @@
 
 from _fluids import OIL_GAS, make_state, setup_console
 
-from correlations import ConvergenceError, get_correlation, list_correlations
+from tpfcorr import ConvergenceError, get_correlation, list_correlations
 
 
 def main() -> None:

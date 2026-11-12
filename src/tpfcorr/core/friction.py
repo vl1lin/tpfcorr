@@ -26,8 +26,8 @@ import math
 import warnings
 from typing import Final
 
-from correlations.core import solvers
-from correlations.core.errors import OutOfRangeWarning
+from tpfcorr.core import solvers
+from tpfcorr.core.errors import OutOfRangeWarning
 
 # Критическое число Рейнольдса диаграммы Moody: ниже — ламинарный режим, f = 64/Re
 RE_LAMINAR_MAX: Final = 2000.0

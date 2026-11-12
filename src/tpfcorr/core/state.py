@@ -11,7 +11,7 @@ from typing import Final, Self
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from correlations.core.patterns import FlowPattern
+from tpfcorr.core.patterns import FlowPattern
 
 # Относительная точность проверки суммы компонент градиента (ТЗ, «Выход»).
 _SUM_RTOL: Final = 1e-10

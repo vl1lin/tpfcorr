@@ -1,6 +1,6 @@
 """Тесты `flow_models/ansari_fp.py` — модуль режима и решение плёнки Ansari 1994 (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.ansari_fp import ...`):
+Ожидаемый API (`from tpfcorr.flow_models.ansari_fp import ...`):
     AnsariFlowOptions(bridging_with_delta_min=True, bubble_slug_sin_theta=False, ff_over_fsl_unity=False)
     AnsariFlowModel(options=None); .name == "ansari_fp"; .options; .predict(state)
     AnnularFilm (frozen dataclass): f_e, lam_lc, rho_c_kg_m3, mu_c_pa_s, v_sc_m_s, f_sc, dp_sc_pa_m, f_sl,
@@ -28,10 +28,10 @@ from typing import Any
 
 import pytest
 
-from correlations.core import annular, friction, gradient, mixture
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.ansari_fp import (
+from tpfcorr.core import annular, friction, gradient, mixture
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.ansari_fp import (
     AnsariFlowModel,
     AnsariFlowOptions,
     film_blockage,

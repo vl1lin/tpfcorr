@@ -6,7 +6,7 @@
 from _fluids import AIR_WATER, make_state, setup_console
 from pydantic import ValidationError
 
-from correlations import (
+from tpfcorr import (
     describe_correlation,
     describe_flow_model,
     get_correlation,

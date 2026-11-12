@@ -38,7 +38,7 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import (
+from tpfcorr.core import (
     annular,
     bubbles,
     dimensionless,
@@ -48,11 +48,11 @@ from correlations.core import (
     solvers,
     transitions,
 )
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # (5): v_sg < 3.17·v_sl ⇔ α_ns < 0.76 (Scott, Kouba)
 _PACKING_ALPHA: Final = 0.76

@@ -1,7 +1,7 @@
 [project]
-name = "correlations"
+name = "tpfcorr"
 version = "0.1.0a1"
-description = "Корреляции и механистические модели режима течения, градиента давления и holdup газожидкостной смеси в трубах"
+description = "Hydrodynamic correlations of two-phase flow: flow pattern, pressure gradient and holdup in pipes and wellbores"
 readme = "README.md"
 authors = [
     { name = "Бартенев Владислав" }
@@ -27,8 +27,8 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/vl1lin/FlowLib"
-Issues = "https://github.com/vl1lin/FlowLib/issues"
+Repository = "https://github.com/vl1lin/tpfcorr"
+Issues = "https://github.com/vl1lin/tpfcorr/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -50,16 +50,16 @@ select = ["E", "F", "I", "UP", "B", "N", "SIM"]
 "tests/**" = ["E501"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["correlations"]
+known-first-party = ["tpfcorr"]
 
 [tool.pyright]
-include = ["src/correlations", "tests"]
+include = ["src/tpfcorr", "tests"]
 # Код библиотеки (core, flow_models, models, registry) — strict.
 strict = [
-    "src/correlations/core",
-    "src/correlations/flow_models",
-    "src/correlations/models",
-    "src/correlations/registry.py",
+    "src/tpfcorr/core",
+    "src/tpfcorr/flow_models",
+    "src/tpfcorr/models",
+    "src/tpfcorr/registry.py",
 ]
 pythonVersion = "3.11"
 

@@ -1,13 +1,13 @@
 """Тесты `core/options.py::BaseOptions` (ТЗ, «Флаги настроек»).
 
-Ожидаемый API: `from correlations.core.options import BaseOptions`.
+Ожидаемый API: `from tpfcorr.core.options import BaseOptions`.
 Свойства флагов конкретных моделей (описание, влияние) проверяются на этапах 4–5.
 """
 
 import pytest
 from pydantic import Field, ValidationError
 
-from correlations.core.options import BaseOptions
+from tpfcorr.core.options import BaseOptions
 
 
 class DemoOptions(BaseOptions):

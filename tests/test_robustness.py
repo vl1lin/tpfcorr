@@ -9,7 +9,7 @@ import math
 
 import pytest
 
-from correlations import FlowState, OutOfRangeWarning, get_correlation
+from tpfcorr import FlowState, OutOfRangeWarning, get_correlation
 
 
 def assert_valid(result_holdup: float, dpdl: float) -> None:

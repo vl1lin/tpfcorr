@@ -1,6 +1,6 @@
 """Тесты `flow_models/beggs_brill_map.py` — карта режимов Beggs–Brill (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.beggs_brill_map import ...`):
+Ожидаемый API (`from tpfcorr.flow_models.beggs_brill_map import ...`):
     BeggsBrillMapOptions(revised_map: bool = False)
     BeggsBrillMap(options: BeggsBrillMapOptions | None = None)
         .name == "beggs_brill_map"; .options; .predict(state) -> FlowPatternResult
@@ -17,9 +17,9 @@ from typing import Any
 
 import pytest
 
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.beggs_brill_map import (
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.beggs_brill_map import (
     BeggsBrillMap,
     BeggsBrillMapOptions,
     froude_boundaries_original,

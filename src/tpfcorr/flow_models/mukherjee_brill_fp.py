@@ -19,11 +19,11 @@
 import math
 from typing import ClassVar, Final
 
-from correlations.core import dimensionless
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core import dimensionless
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # [2]: lg N_gvSM = 1.401 − 2.694·N_L + 0.521·N_Lv^0.329
 _SM_A: Final = 1.401

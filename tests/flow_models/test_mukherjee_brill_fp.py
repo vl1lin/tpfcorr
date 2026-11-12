@@ -1,6 +1,6 @@
 """Тесты `flow_models/mukherjee_brill_fp.py` — карта режимов Mukherjee–Brill (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.mukherjee_brill_fp import ...`):
+Ожидаемый API (`from tpfcorr.flow_models.mukherjee_brill_fp import ...`):
     MukherjeeBrillFlowOptions()     — флагов нет (ТЗ)
     MukherjeeBrillFlowModel(options=None); .name == "mukherjee_brill_fp"
     n_gv_slug_annular(n_l, n_lv) -> float                   N_gvSM  [2]
@@ -19,10 +19,10 @@ from typing import Any
 
 import pytest
 
-from correlations.core import dimensionless
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.mukherjee_brill_fp import (
+from tpfcorr.core import dimensionless
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.mukherjee_brill_fp import (
     MukherjeeBrillFlowModel,
     MukherjeeBrillFlowOptions,
     n_gv_bubble_slug,

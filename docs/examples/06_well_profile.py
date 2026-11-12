@@ -11,7 +11,7 @@ PVT-библиотеки).
 
 from _fluids import OIL_GAS, make_state, setup_console
 
-from correlations import get_correlation
+from tpfcorr import get_correlation
 
 BOTTOM_PRESSURE_PA = 20.0e6
 WELL_LENGTH_M = 2000.0

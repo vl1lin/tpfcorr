@@ -5,14 +5,14 @@
 (BB 1973 ур. 1: Ek = ρ_s·v_m·v_sg/p; HK 1988 ур. 33: ρ_c·v_g²/p).
 
 Коэффициент трения во всех функциях — Darcy (Moody); Fanning переводить через
-`correlations.core.friction.fanning_to_darcy`.
+`tpfcorr.core.friction.fanning_to_darcy`.
 """
 
 import math
 from dataclasses import dataclass
 
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import ConvergenceError
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import ConvergenceError
 
 
 @dataclass(frozen=True, slots=True)

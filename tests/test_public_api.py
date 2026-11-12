@@ -1,6 +1,6 @@
-"""Тесты публичного API `correlations` (этап 6).
+"""Тесты публичного API `tpfcorr` (этап 6).
 
-Ожидаемый `correlations/__init__.py`: экспортирует (через `__all__`)
+Ожидаемый `tpfcorr/__init__.py`: экспортирует (через `__all__`)
     реестр: get_correlation, get_flow_model, list_correlations, list_flow_models,
         describe_correlation, describe_flow_model;
     типы: FlowState, FlowPattern, FlowPatternResult, CorrelationResult, BaseOptions,
@@ -10,7 +10,7 @@
         Ansari(+Options);
     модели режима и их опции: BeggsBrillMap, MukherjeeBrillFlowModel, TaitelDuklerModel,
         BarneaModel, HasanKabirFlowModel, AnsariFlowModel (+ `*Options`).
-Импорт `correlations` не должен тянуть старые плоские модули и `ansari_vba`.
+Импорт `tpfcorr` не должен тянуть старые плоские модули и `ansari_vba`.
 README.md в корне: для каждой корреляции и модели режима таблица флагов
 (имена флагов из `describe()` присутствуют в тексте README).
 """
@@ -22,8 +22,8 @@ from pathlib import Path
 
 import pytest
 
-import correlations
-from correlations import registry
+import tpfcorr
+from tpfcorr import registry
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -68,37 +68,34 @@ EXPECTED_EXPORTS = {
 
 
 def test_all_contains_expected_exports() -> None:
-    assert set(correlations.__all__) >= EXPECTED_EXPORTS
+    assert set(tpfcorr.__all__) >= EXPECTED_EXPORTS
 
 
 def test_all_names_exist_and_unique() -> None:
-    assert len(correlations.__all__) == len(set(correlations.__all__))
-    for name in correlations.__all__:
-        assert hasattr(correlations, name), name
+    assert len(tpfcorr.__all__) == len(set(tpfcorr.__all__))
+    for name in tpfcorr.__all__:
+        assert hasattr(tpfcorr, name), name
 
 
 def test_exports_are_same_objects_as_in_modules() -> None:
-    assert correlations.get_correlation is registry.get_correlation
-    assert correlations.FlowState is importlib.import_module("correlations.core.state").FlowState
-    assert (
-        correlations.BeggsBrill
-        is importlib.import_module("correlations.models.beggs_brill").BeggsBrill
-    )
+    assert tpfcorr.get_correlation is registry.get_correlation
+    assert tpfcorr.FlowState is importlib.import_module("tpfcorr.core.state").FlowState
+    assert tpfcorr.BeggsBrill is importlib.import_module("tpfcorr.models.beggs_brill").BeggsBrill
 
 
 def test_top_level_usage(aw_state) -> None:  # type: ignore[no-untyped-def]
-    model = correlations.get_correlation("mukherjee_brill")
+    model = tpfcorr.get_correlation("mukherjee_brill")
     result = model.calc(aw_state(0.1, 1.0, 0.0508, 45.0))
-    assert isinstance(result, correlations.CorrelationResult)
+    assert isinstance(result, tpfcorr.CorrelationResult)
 
 
 def test_import_does_not_load_legacy_modules() -> None:
     code = (
-        "import sys, correlations;"
-        "legacy = ['correlations.ansari', 'correlations.barnea', 'correlations.beggs_brill',"
-        " 'correlations.hasan_kabir', 'correlations.mukherjee_brill', 'correlations.taitel_dukler',"
-        " 'correlations.base', 'correlations.domain', 'correlations.physics',"
-        " 'correlations.ansari_vba'];"
+        "import sys, tpfcorr;"
+        "legacy = ['tpfcorr.ansari', 'tpfcorr.barnea', 'tpfcorr.beggs_brill',"
+        " 'tpfcorr.hasan_kabir', 'tpfcorr.mukherjee_brill', 'tpfcorr.taitel_dukler',"
+        " 'tpfcorr.base', 'tpfcorr.domain', 'tpfcorr.physics',"
+        " 'tpfcorr.ansari_vba'];"
         "loaded = [m for m in legacy if m in sys.modules];"
         "print(','.join(loaded)); sys.exit(1 if loaded else 0)"
     )
@@ -111,11 +108,11 @@ def test_import_does_not_load_legacy_modules() -> None:
 def test_version_matches_package_metadata() -> None:
     from importlib.metadata import version
 
-    assert correlations.__version__ == version("correlations")
+    assert tpfcorr.__version__ == version("tpfcorr")
 
 
 def test_py_typed_marker_present() -> None:
-    assert (Path(correlations.__file__).parent / "py.typed").is_file()
+    assert (Path(tpfcorr.__file__).parent / "py.typed").is_file()
 
 
 @pytest.fixture(scope="module")

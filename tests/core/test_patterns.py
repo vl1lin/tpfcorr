@@ -2,7 +2,7 @@
 
 from enum import StrEnum
 
-from correlations.core.patterns import FlowPattern
+from tpfcorr.core.patterns import FlowPattern
 
 # reference: ТЗ, «Выход», перечень FlowPattern
 EXPECTED_MEMBERS = {

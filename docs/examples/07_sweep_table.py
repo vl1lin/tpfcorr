@@ -9,7 +9,7 @@ import warnings
 
 from _fluids import AIR_WATER, make_state, setup_console
 
-from correlations import ConvergenceError, OutOfRangeWarning, get_correlation
+from tpfcorr import ConvergenceError, OutOfRangeWarning, get_correlation
 
 V_SG_M_S = (0.1, 0.5, 1.0, 3.0, 10.0, 30.0)
 ANGLES_DEG = (-30.0, 0.0, 30.0, 90.0)

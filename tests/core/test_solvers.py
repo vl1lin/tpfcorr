@@ -1,6 +1,6 @@
 """Тесты `core/solvers.py` — собственные решатели (scipy в новом коде не используется).
 
-Ожидаемый API (`from correlations.core import solvers`), `f: Callable[[float], float]`:
+Ожидаемый API (`from tpfcorr.core import solvers`), `f: Callable[[float], float]`:
     bisect(f, a, b, *, rtol=1e-12, atol=1e-14, max_iter=200) -> float
     brent(f, a, b, *, rtol=1e-12, atol=1e-14, max_iter=100) -> float
     newton_bracketed(f, df, x0, bracket, *, rtol=1e-12, atol=1e-14, max_iter=100) -> float
@@ -13,8 +13,8 @@ from collections.abc import Callable
 
 import pytest
 
-from correlations.core import solvers
-from correlations.core.errors import ConvergenceError
+from tpfcorr.core import solvers
+from tpfcorr.core.errors import ConvergenceError
 
 SQRT2 = math.sqrt(2.0)
 

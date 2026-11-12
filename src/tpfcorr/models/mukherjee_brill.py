@@ -32,15 +32,15 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import dimensionless, friction, gradient, mixture, stratified
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import UnsupportedPatternError
-from correlations.core.interfaces import IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowState
-from correlations.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
-from correlations.models._common import assemble_gradient, single_phase_correlation_result
+from tpfcorr.core import dimensionless, friction, gradient, mixture, stratified
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import UnsupportedPatternError
+from tpfcorr.core.interfaces import IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowState
+from tpfcorr.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
+from tpfcorr.models._common import assemble_gradient, single_phase_correlation_result
 
 # Table 1 (C1…C6)
 _COEFFICIENTS_UPHILL: Final = (-0.380113, 0.129875, -0.119788, 2.343227, 0.475686, 0.288657)

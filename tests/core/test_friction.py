@@ -3,7 +3,7 @@
 Соглашение ТЗ: ядро везде использует Moody/Darcy; Fanning (TD, Barnea, HK) явно
 переводится в Darcy множителем 4 в одном месте (`fanning_to_darcy`).
 
-Ожидаемый API (`from correlations.core import friction`):
+Ожидаемый API (`from tpfcorr.core import friction`):
     laminar_darcy(re) -> float                         64/Re (Darcy)
     colebrook(re, rel_roughness) -> float              Darcy, уравнение Colebrook–White
     bb_smooth(re) -> float                             Darcy, Beggs–Brill 1973, ур. (13)
@@ -19,8 +19,8 @@ import warnings
 
 import pytest
 
-from correlations.core import friction
-from correlations.core.errors import OutOfRangeWarning
+from tpfcorr.core import friction
+from tpfcorr.core.errors import OutOfRangeWarning
 
 # --- Эталоны ---------------------------------------------------------------------------
 # reference: ТЗ, «Элементные эталоны», BB: Re_ns / f_ns Colebrook / f_ns гладкая (13)

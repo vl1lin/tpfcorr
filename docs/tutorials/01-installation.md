@@ -9,7 +9,7 @@
 - Зависимости времени выполнения: `numpy>=2.0`, `pydantic>=2`, `scipy>=1.13`.
 - Зависимости разработки (группа `dev`): `pyright`, `pytest`, `pytest-cov`, `ruff`.
 
-Система сборки пакета — `uv_build`. Исходный код лежит в `src/correlations`; пакет типизирован
+Система сборки пакета — `uv_build`. Исходный код лежит в `src/tpfcorr`; пакет типизирован
 (есть маркер `py.typed`), поэтому проверки типов в вашем проекте видят аннотации библиотеки.
 
 ## Установка из исходников
@@ -63,7 +63,7 @@ uv run pyright
 `coverage` напрямую:
 
 ```bash
-uv run coverage run --source=src/correlations/core,src/correlations/flow_models,src/correlations/models -m pytest -q -p no:warnings
+uv run coverage run --source=src/tpfcorr/core,src/tpfcorr/flow_models,src/tpfcorr/models -m pytest -q -p no:warnings
 uv run coverage report -m
 ```
 

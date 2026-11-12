@@ -11,7 +11,7 @@
 
 from dataclasses import dataclass
 
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 
 @dataclass(frozen=True, slots=True)

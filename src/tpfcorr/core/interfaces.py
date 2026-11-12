@@ -14,8 +14,8 @@
 
 from typing import ClassVar, Protocol, runtime_checkable
 
-from correlations.core.options import BaseOptions
-from correlations.core.state import CorrelationResult, FlowPatternResult, FlowState
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.state import CorrelationResult, FlowPatternResult, FlowState
 
 
 @runtime_checkable

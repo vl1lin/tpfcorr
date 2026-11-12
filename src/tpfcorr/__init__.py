@@ -14,25 +14,25 @@
 
 from importlib.metadata import PackageNotFoundError, version
 
-from correlations.core.errors import ConvergenceError, OutOfRangeWarning, UnsupportedPatternError
-from correlations.core.interfaces import ICorrelation, IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowPatternResult, FlowState
-from correlations.flow_models.ansari_fp import AnsariFlowModel, AnsariFlowOptions
-from correlations.flow_models.barnea import BarneaModel, BarneaOptions
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap, BeggsBrillMapOptions
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
-from correlations.flow_models.mukherjee_brill_fp import (
+from tpfcorr.core.errors import ConvergenceError, OutOfRangeWarning, UnsupportedPatternError
+from tpfcorr.core.interfaces import ICorrelation, IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowPatternResult, FlowState
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel, AnsariFlowOptions
+from tpfcorr.flow_models.barnea import BarneaModel, BarneaOptions
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap, BeggsBrillMapOptions
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel, HasanKabirFlowOptions
+from tpfcorr.flow_models.mukherjee_brill_fp import (
     MukherjeeBrillFlowModel,
     MukherjeeBrillFlowOptions,
 )
-from correlations.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
-from correlations.models.ansari import Ansari, AnsariOptions
-from correlations.models.beggs_brill import BeggsBrill, BeggsBrillOptions
-from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions
-from correlations.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
-from correlations.registry import (
+from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
+from tpfcorr.models.ansari import Ansari, AnsariOptions
+from tpfcorr.models.beggs_brill import BeggsBrill, BeggsBrillOptions
+from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions
+from tpfcorr.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
+from tpfcorr.registry import (
     describe_correlation,
     describe_flow_model,
     get_correlation,
@@ -42,7 +42,7 @@ from correlations.registry import (
 )
 
 try:
-    __version__ = version("correlations")
+    __version__ = version("tpfcorr")
 except PackageNotFoundError:  # пакет не установлен (запуск из исходников без установки)
     __version__ = "0.0.0+unknown"
 

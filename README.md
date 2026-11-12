@@ -1,4 +1,4 @@
-# Correlations
+# tpfcorr — Hydrodynamic Correlations of Two-Phase Flow
 
 Библиотека корреляций градиента давления газожидкостного потока в трубах и скважинах
 (приоритет — механистические модели). Все величины — в СИ.
@@ -11,18 +11,18 @@
 Пакет распространяется через GitHub (в PyPI не опубликован). Версия закрепляется тегом.
 
 ```bash
-uv add "correlations @ git+https://github.com/vl1lin/FlowLib@v0.1.0a1"
+uv add "tpfcorr @ git+https://github.com/vl1lin/tpfcorr@v0.1.0a1"
 # или pip:
-pip install "correlations @ git+https://github.com/vl1lin/FlowLib@v0.1.0a1"
+pip install "tpfcorr @ git+https://github.com/vl1lin/tpfcorr@v0.1.0a1"
 ```
 
-Колесо и sdist приложены к [релизам](https://github.com/vl1lin/FlowLib/releases). Разработка:
+Колесо и sdist приложены к [релизам](https://github.com/vl1lin/tpfcorr/releases). Разработка:
 `uv sync`, проверки — `uv run python check.py`. Требуется Python ≥ 3.11.
 
 ## Использование
 
 ```python
-from correlations import FlowState, get_correlation, get_flow_model
+from tpfcorr import FlowState, get_correlation, get_flow_model
 
 state = FlowState(  # СИ; угол от горизонтали, > 0 — подъём
     rho_l_kg_m3=800.0, rho_g_kg_m3=80.0, mu_l_pa_s=2.0e-3, mu_g_pa_s=1.5e-5,

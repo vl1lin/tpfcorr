@@ -1,7 +1,7 @@
 """Общие помощники модулей режима потока."""
 
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
 
 
 def single_phase_result(state: FlowState) -> FlowPatternResult | None:

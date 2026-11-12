@@ -1,7 +1,7 @@
 """Тесты `core/state.py::FlowPatternResult` и `CorrelationResult` (ТЗ, раздел «Выход»).
 
-Ожидаемый API: `from correlations.core.state import CorrelationResult, FlowPatternResult`;
-`from correlations.core.patterns import FlowPattern`.
+Ожидаемый API: `from tpfcorr.core.state import CorrelationResult, FlowPatternResult`;
+`from tpfcorr.core.patterns import FlowPattern`.
 """
 
 from typing import Any
@@ -9,8 +9,8 @@ from typing import Any
 import pytest
 from pydantic import ValidationError
 
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowPatternResult
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowPatternResult
 
 
 def corr_kwargs(**changes: Any) -> dict[str, Any]:

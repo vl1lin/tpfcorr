@@ -8,7 +8,7 @@ import warnings
 from _fluids import AIR_WATER, make_state, setup_console
 from pydantic import ValidationError
 
-from correlations import ConvergenceError, OutOfRangeWarning, get_correlation
+from tpfcorr import ConvergenceError, OutOfRangeWarning, get_correlation
 
 
 def main() -> None:

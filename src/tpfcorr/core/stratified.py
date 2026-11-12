@@ -22,8 +22,8 @@ import math
 from dataclasses import dataclass
 from typing import Final
 
-from correlations.core import solvers
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core import solvers
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 # Площадь сечения в долях D²: Ã = π/4
 _AREA_TILDE: Final = math.pi / 4.0

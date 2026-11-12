@@ -1,6 +1,6 @@
 """Тесты `models/ansari.py` — корреляция Ansari et al. 1994 (ICorrelation).
 
-Ожидаемый API (`from correlations.models.ansari import ...`):
+Ожидаемый API (`from tpfcorr.models.ansari import ...`):
     AnsariOptions(developing_slug=True, vo_shoham_a_as_published=False, bridging_with_delta_min=True,
                   bubble_slug_sin_theta=False, ff_over_fsl_unity=False, eq56_as_published=False)
     Ansari(options=None, flow_model=None); .name == "ansari"; .options; .flow_model; .calc(state)
@@ -38,13 +38,13 @@ from typing import Any, ClassVar
 
 import pytest
 
-from correlations.core import annular, bubbles, friction, mixture
-from correlations.core.errors import UnsupportedPatternError
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models.ansari_fp import AnsariFlowModel, solve_annular_film
-from correlations.models.ansari import (
+from tpfcorr.core import annular, bubbles, friction, mixture
+from tpfcorr.core.errors import UnsupportedPatternError
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel, solve_annular_film
+from tpfcorr.models.ansari import (
     Ansari,
     AnsariOptions,
     bubble_holdup,

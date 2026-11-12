@@ -1,6 +1,6 @@
 """Тесты `flow_models/hasan_kabir_fp.py` — модуль режима Hasan–Kabir 1988 (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.hasan_kabir_fp import ...`):
+Ожидаемый API (`from tpfcorr.flow_models.hasan_kabir_fp import ...`):
     HasanKabirFlowOptions(porteous_low_pressure=False)
     HasanKabirFlowModel(options=None); .name == "hasan_kabir_fp"; .options; .predict(state)
     hewitt_roberts_boundary_lbm(rho_l_vls_sq_lbm) -> float     ρ_g·v_gs² на границе slug/churn, lbm/(ft·s²)  (ур. 8, 9)
@@ -26,10 +26,10 @@ from typing import Any
 
 import pytest
 
-from correlations.core.errors import OutOfRangeWarning
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.hasan_kabir_fp import (
+from tpfcorr.core.errors import OutOfRangeWarning
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.hasan_kabir_fp import (
     LBM_FT_S2_IN_SI,
     HasanKabirFlowModel,
     HasanKabirFlowOptions,

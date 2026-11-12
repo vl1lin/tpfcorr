@@ -1,9 +1,9 @@
 """Общие тесты `ICorrelation` для всех полных корреляций (ТЗ, «Общие тесты свойств»).
 
 Ожидаемый API:
-    `from correlations.core.interfaces import ICorrelation` — Protocol, runtime_checkable:
+    `from tpfcorr.core.interfaces import ICorrelation` — Protocol, runtime_checkable:
         name: ClassVar[str]; options -> BaseOptions; flow_model -> IFlowModel; calc(state) -> CorrelationResult.
-    `from correlations.core.errors import UnsupportedPatternError` — ValueError, атрибут `pattern`;
+    `from tpfcorr.core.errors import UnsupportedPatternError` — ValueError, атрибут `pattern`;
         выбрасывается, если внедрённая модель режима вернула режим, который корреляция не обрабатывает.
 Конструктор любой корреляции: `Model(options=None, flow_model=None)`.
 Однофазные пределы (ТЗ): v_sg = 0 → SINGLE_PHASE_LIQUID, H_L = 1; v_sl = 0 → SINGLE_PHASE_GAS, H_L = 0;
@@ -17,20 +17,20 @@ from typing import Any, ClassVar
 import pytest
 from pydantic import ValidationError
 
-from correlations.core import friction
-from correlations.core.errors import UnsupportedPatternError
-from correlations.core.interfaces import ICorrelation, IFlowModel
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowPatternResult, FlowState
-from correlations.flow_models.ansari_fp import AnsariFlowModel
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap
-from correlations.flow_models.hasan_kabir_fp import HasanKabirFlowModel
-from correlations.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
-from correlations.models.ansari import Ansari, AnsariOptions
-from correlations.models.beggs_brill import BeggsBrill, BeggsBrillOptions
-from correlations.models.hasan_kabir import HasanKabir, HasanKabirOptions
-from correlations.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
+from tpfcorr.core import friction
+from tpfcorr.core.errors import UnsupportedPatternError
+from tpfcorr.core.interfaces import ICorrelation, IFlowModel
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowPatternResult, FlowState
+from tpfcorr.flow_models.ansari_fp import AnsariFlowModel
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap
+from tpfcorr.flow_models.hasan_kabir_fp import HasanKabirFlowModel
+from tpfcorr.flow_models.mukherjee_brill_fp import MukherjeeBrillFlowModel
+from tpfcorr.models.ansari import Ansari, AnsariOptions
+from tpfcorr.models.beggs_brill import BeggsBrill, BeggsBrillOptions
+from tpfcorr.models.hasan_kabir import HasanKabir, HasanKabirOptions
+from tpfcorr.models.mukherjee_brill import MukherjeeBrill, MukherjeeBrillOptions
 
 CORRELATIONS = [BeggsBrill, MukherjeeBrill, HasanKabir, Ansari]
 EXPECTED_NAMES = {

@@ -12,7 +12,7 @@
 import math
 from typing import Final
 
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 TAYLOR_COEFFICIENT_HK: Final = 0.345  # HK 1988, ур. 27
 TAYLOR_COEFFICIENT_ANSARI: Final = 0.35  # Ansari 1994, (34)

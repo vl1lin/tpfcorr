@@ -1,6 +1,6 @@
 """Тесты `flow_models/taitel_dukler.py` — модель Taitel–Dukler 1976 (IFlowModel).
 
-Ожидаемый API (`from correlations.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions`):
+Ожидаемый API (`from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions`):
     TaitelDuklerOptions(laminar_switch=True, use_moody_friction=False)
     TaitelDuklerModel(options=None); .name == "taitel_dukler"; .options; .predict(state)
 Схема (ТЗ, «Taitel & Dukler (1976)»); θ > 0 вверх (внутри α = −θ):
@@ -19,10 +19,10 @@ from typing import Any
 
 import pytest
 
-from correlations.core import friction, gradient, stratified
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
+from tpfcorr.core import friction, gradient, stratified
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.taitel_dukler import TaitelDuklerModel, TaitelDuklerOptions
 
 D = 0.0254
 

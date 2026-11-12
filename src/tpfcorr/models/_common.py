@@ -2,9 +2,9 @@
 
 import math
 
-from correlations.core import dimensionless, friction, gradient
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import CorrelationResult, FlowState
+from tpfcorr.core import dimensionless, friction, gradient
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import CorrelationResult, FlowState
 
 
 def single_phase_correlation_result(state: FlowState) -> CorrelationResult | None:

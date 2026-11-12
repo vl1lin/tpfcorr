@@ -4,7 +4,7 @@
 Y здесь определяется для θ: Y = Δρ·g·sinθ/(dp/dx)_G (Barnea [12b]); в уравнении (7) TD член
 −4Y_TD превращается в +4Y.
 
-Ожидаемый API (`from correlations.core import stratified`):
+Ожидаемый API (`from tpfcorr.core import stratified`):
     geometry(h_tilde) -> StratifiedGeometry    поля: h, a_l, a_g, s_l, s_g, s_i,
                                                u_l, u_g (безразм. скорости Ã/Ã_L, Ã/Ã_G),
                                                d_l, d_g (безразм. гидравл. диаметры, TD (6))
@@ -26,8 +26,8 @@ from typing import Any
 
 import pytest
 
-from correlations.core import friction, gradient, stratified
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core import friction, gradient, stratified
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 
 # --- геометрия -------------------------------------------------------------------------

@@ -7,7 +7,7 @@
 import sys
 from typing import Any
 
-from correlations import FlowState
+from tpfcorr import FlowState
 
 # Воздух–вода, 25 °C, 0.1 МПа.
 AIR_WATER: dict[str, float] = {

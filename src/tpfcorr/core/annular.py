@@ -19,7 +19,7 @@ import math
 from collections.abc import Callable
 from typing import Final
 
-from correlations.core import solvers
+from tpfcorr.core import solvers
 
 # Ansari (71): F_E = 1 − exp[−0.125·(v_crit − 1.5)]
 _WALLIS_ENTRAINMENT_RATE: Final = 0.125

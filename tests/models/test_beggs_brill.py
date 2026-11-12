@@ -1,6 +1,6 @@
 """Тесты `models/beggs_brill.py` — корреляция Beggs–Brill (ICorrelation).
 
-Ожидаемый API (`from correlations.models.beggs_brill import ...`):
+Ожидаемый API (`from tpfcorr.models.beggs_brill import ...`):
     BeggsBrillOptions(revised_map=False, payne_correction=False, rough_pipe_friction=False,
                       clip_negative_c=False, include_acceleration=True)
     BeggsBrill(options=None, flow_model=None); .name == "beggs_brill"; .options; .flow_model;
@@ -26,11 +26,11 @@ from typing import Any
 
 import pytest
 
-from correlations.core import dimensionless, mixture
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowState
-from correlations.flow_models.beggs_brill_map import BeggsBrillMap
-from correlations.models.beggs_brill import (
+from tpfcorr.core import dimensionless, mixture
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowState
+from tpfcorr.flow_models.beggs_brill_map import BeggsBrillMap
+from tpfcorr.models.beggs_brill import (
     BeggsBrill,
     BeggsBrillOptions,
     friction_ratio_exponent,

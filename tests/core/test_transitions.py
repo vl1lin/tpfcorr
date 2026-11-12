@@ -1,6 +1,6 @@
 """Тесты `core/transitions.py` — общие критерии переходов (пересечения №6–№10 ТЗ).
 
-Ожидаемый API (`from correlations.core import transitions`):
+Ожидаемый API (`from tpfcorr.core import transitions`):
     bubble_slug_drift_flux(v_sl, v_rise, *, c0, alpha=0.25) -> float
         v_sg = (α·C0·v_sl + α·v_rise)/(1 − α·C0)   — HK ур. 1–2 (v_g = C0·v_m + v∞)
     bubble_slug_slip(v_sl, v_rise, *, alpha=0.25, sin_theta=1.0) -> float
@@ -27,8 +27,8 @@ from typing import Any
 
 import pytest
 
-from correlations.core import bubbles, friction, transitions
-from correlations.core.constants import GRAVITY_M_S2
+from tpfcorr.core import bubbles, friction, transitions
+from tpfcorr.core.constants import GRAVITY_M_S2
 
 
 # --- №6: переход пузырьковый -> пробковый -----------------------------------------------

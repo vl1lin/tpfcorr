@@ -13,5 +13,5 @@
   `hasan_kabir_fp`, `ansari_fp`.
 - Реестр (`get_correlation`, `get_flow_model`, `list_*`, `describe_*`), `FlowState`, `FlowPattern`,
   опции моделей (pydantic), ошибки и предупреждения.
-- `correlations.__version__`.
+- `tpfcorr.__version__`.
 - Лицензия MIT.

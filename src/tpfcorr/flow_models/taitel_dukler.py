@@ -26,13 +26,13 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core import friction, gradient, stratified
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.errors import ConvergenceError
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core import friction, gradient, stratified
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.errors import ConvergenceError
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # TD (5): турбулентные n = m = 0.2; ламинарные n = m = 1
 _TURBULENT_EXPONENT: Final = 0.2

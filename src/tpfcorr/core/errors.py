@@ -6,7 +6,7 @@
 
 from collections.abc import Mapping
 
-from correlations.core.patterns import FlowPattern
+from tpfcorr.core.patterns import FlowPattern
 
 
 class ConvergenceError(Exception):

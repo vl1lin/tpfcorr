@@ -20,11 +20,11 @@ from typing import ClassVar, Final
 
 from pydantic import Field
 
-from correlations.core.constants import GRAVITY_M_S2
-from correlations.core.options import BaseOptions
-from correlations.core.patterns import FlowPattern
-from correlations.core.state import FlowPatternResult, FlowState
-from correlations.flow_models._common import single_phase_result
+from tpfcorr.core.constants import GRAVITY_M_S2
+from tpfcorr.core.options import BaseOptions
+from tpfcorr.core.patterns import FlowPattern
+from tpfcorr.core.state import FlowPatternResult, FlowState
+from tpfcorr.flow_models._common import single_phase_result
 
 # BB 1973, ур. 9: L1 = exp(−4.62 − 3.757·X − 0.481·X² − 0.0207·X³)
 _L1_COEFFICIENTS: Final = (-4.62, -3.757, -0.481, -0.0207)
