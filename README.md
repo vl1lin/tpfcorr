@@ -3,19 +3,34 @@
 Библиотека корреляций градиента давления газожидкостного потока в трубах и скважинах
 (приоритет — механистические модели). Все величины — в СИ.
 
+> **Статус: предрелиз (`0.1.0a1`).** Корректность реализаций ещё проверяется, API и результаты
+> могут измениться. Для расчётов, от которых что-либо зависит, сверяйтесь с оригинальными статьями.
+
 ## Установка
 
+Пакет распространяется через GitHub (в PyPI не опубликован). Версия закрепляется тегом.
+
 ```bash
-uv sync
+uv add "correlations @ git+https://github.com/vl1lin/FlowLib@v0.1.0a1"
+# или pip:
+pip install "correlations @ git+https://github.com/vl1lin/FlowLib@v0.1.0a1"
 ```
+
+Колесо и sdist приложены к [релизам](https://github.com/vl1lin/FlowLib/releases). Разработка:
+`uv sync`, проверки — `uv run python check.py`. Требуется Python ≥ 3.11.
 
 ## Использование
 
 ```python
-from correlations import get_correlation, get_flow_model
+from correlations import FlowState, get_correlation, get_flow_model
+
+state = FlowState(  # СИ; угол от горизонтали, > 0 — подъём
+    rho_l_kg_m3=800.0, rho_g_kg_m3=80.0, mu_l_pa_s=2.0e-3, mu_g_pa_s=1.5e-5,
+    sigma_n_m=0.025, p_pa=10.0e6, v_sl_m_s=0.3, v_sg_m_s=1.5, d_m=0.0762, theta_deg=90.0,
+)
 
 model = get_correlation("beggs_brill", payne_correction=True)
-result = model.calc(state)  # state: FlowState; result: CorrelationResult
+result = model.calc(state)  # CorrelationResult: dpdl_pa_m, holdup, pattern
 
 flow = get_flow_model("barnea")
 model = get_correlation("hasan_kabir", flow_model=flow)  # внедрение модели режима
@@ -116,3 +131,11 @@ model = get_correlation("hasan_kabir", flow_model=flow)  # внедрение м
 |---|---|---|
 | `laminar_switch` | `True` | Выбор коэффициентов C, n трения по фактическому Re каждой фазы (скорость и гидравлический диаметр (6)) вместо всегда турбулентных. Выключать (False) для сверки с картой Fig. 4 (турбулентный расчёт). Источник: Taitel, Dukler 1976, (5). |
 | `use_moody_friction` | `False` | Градиенты однофазных потоков по Colebrook с шероховатостью ε вместо гладких 0.046·Re^-0.2 / 16/Re. Включать для шероховатых труб (предложение авторов в конце статьи). Источник: Taitel, Dukler 1976. |
+
+## Автор
+
+Бартенев Владислав, студент РГУ нефти и газа имени И.М. Губкина.
+
+## Лицензия
+
+[MIT](LICENSE)

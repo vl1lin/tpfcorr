@@ -108,6 +108,12 @@ def test_import_does_not_load_legacy_modules() -> None:
     assert proc.returncode == 0, proc.stdout + proc.stderr
 
 
+def test_version_matches_package_metadata() -> None:
+    from importlib.metadata import version
+
+    assert correlations.__version__ == version("correlations")
+
+
 def test_py_typed_marker_present() -> None:
     assert (Path(correlations.__file__).parent / "py.typed").is_file()
 

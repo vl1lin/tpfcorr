@@ -12,6 +12,8 @@
 Все величины — в СИ.
 """
 
+from importlib.metadata import PackageNotFoundError, version
+
 from correlations.core.errors import ConvergenceError, OutOfRangeWarning, UnsupportedPatternError
 from correlations.core.interfaces import ICorrelation, IFlowModel
 from correlations.core.options import BaseOptions
@@ -38,6 +40,11 @@ from correlations.registry import (
     list_correlations,
     list_flow_models,
 )
+
+try:
+    __version__ = version("correlations")
+except PackageNotFoundError:  # пакет не установлен (запуск из исходников без установки)
+    __version__ = "0.0.0+unknown"
 
 __all__ = [
     "Ansari",
@@ -70,6 +77,7 @@ __all__ = [
     "TaitelDuklerModel",
     "TaitelDuklerOptions",
     "UnsupportedPatternError",
+    "__version__",
     "describe_correlation",
     "describe_flow_model",
     "get_correlation",
